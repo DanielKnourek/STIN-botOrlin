@@ -12,5 +12,5 @@ COPY package*.json ./
 
 RUN yarn install
 
-# # Running the app dev server
-# CMD ["yarn", "dev"]
+# Running the app dev server
+CMD ["yarn", "dev"]
