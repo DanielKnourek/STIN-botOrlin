@@ -1,6 +1,12 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "description": "botOrlin App",
+  "author": {
+    "name": "Daniel Kňourek",
+    "email": "dev.danielknourek@gmail.com"
+  },
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
