@@ -3,7 +3,10 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"command": ["yarn", "test"],
+			"command": [
+				"yarn",
+				"test"
+			],
 			"group": "test",
 			"problemMatcher": [],
 			"options": {
@@ -11,6 +14,42 @@
 			},
 			"label": "yarn: run tests",
 			"detail": "jest"
-		}
+		},
+		{
+			"type": "shell",
+			"command": [
+				"yarn",
+				"install"
+			],
+			"group": "test",
+			"problemMatcher": [],
+			"options": {
+				"cwd": "${workspaceFolder}/tests/"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "never",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"label": "yarn: install test packages"
+		},
+		{
+			"type": "shell",
+			"group": "test",
+			"problemMatcher": [],
+			"options": {
+				"cwd": "${workspaceFolder}/tests/"
+			},
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"yarn: install test packages",
+				"yarn: run tests"
+			],
+			"label": "yarn: install & run tests",
+			"detail": "jest"
+		},
 	]
 }
