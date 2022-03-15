@@ -1,0 +1,23 @@
+name: Automated Tests and Linting
+
+on:
+  push:
+    branches: [ main, dev/main ]
+  pull_request:
+    branches: [ main, dev/main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./tests/
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - run: yarn install
+      - run: yarn test
