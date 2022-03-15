@@ -8,6 +8,6 @@ module.exports = {
   "transformIgnorePatterns": [
     "node_modules/(?!frontend/.*)"
   ],
-  verbose: true,
+  // verbose: true,
   // automock: true,
 };
