@@ -1,0 +1,25 @@
+name: node.js CI
+
+on:
+  push:
+    branches: [ main, dev/main ]
+  pull_request:
+    branches: [ main, dev/main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+        
+      - run: pwd
+      - run: ls -la
+      - run: ls -la /
+      - run: yarn install
+      - run: yarn test
