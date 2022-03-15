@@ -18,8 +18,6 @@ jobs:
         with:
           node-version: '16.x'
         
-      - run: pwd
-      - run: ls -la
-      - run: ls -la /
+      - run: cd tests/
       - run: yarn install
       - run: yarn test
