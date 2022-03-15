@@ -1,4 +1,4 @@
-name: node.js CI
+name: Automated Tests and Linting
 
 on:
   push:
