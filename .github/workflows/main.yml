@@ -19,9 +19,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16.x'
-      
-      - run: ls -la 
-      - run: cd tests/
       - run: yarn install
-      - run: ls -la 
       - run: yarn test
