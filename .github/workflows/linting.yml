@@ -1,4 +1,4 @@
-name: Automated Tests | frontend/
+name: Automated linting | frontend/
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./tests/
+        working-directory: ./frontend/
     steps:
       - uses: actions/checkout@v2
       
@@ -26,4 +26,4 @@ jobs:
         with:
           node-version: '16.x'
       - run: yarn install
-      - run: yarn test
+      - run: yarn lint
