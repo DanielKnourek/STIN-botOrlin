@@ -8,6 +8,7 @@ module.exports = {
   "transformIgnorePatterns": [
     "node_modules/(?!frontend/.*)"
   ],
+  "coverageReporters": ["lcov", ["text", {"skipFull": true}]]
   // verbose: true,
   // automock: true,
 };
