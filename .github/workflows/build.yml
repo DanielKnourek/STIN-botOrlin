@@ -1,18 +1,33 @@
 name: Build
 on:
   push:
-    branches:
-      - master
+    branches: [ main, dev/main ]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./tests/
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+
+      - run: yarn install
+      - run: yarn build
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
