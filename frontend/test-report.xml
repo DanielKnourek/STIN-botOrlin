@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/workspace/frontend/tests/demo.test.ts">
+  </file>
+  <file path="/workspace/frontend/tests/lib/getHello.test.ts">
+  </file>
+</testExecutions>

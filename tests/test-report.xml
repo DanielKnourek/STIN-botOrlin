@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/workspace/tests/frontend/demo.test.ts">
+    <testCase name="complex math functions adds 1 + 2 to equal 3" duration="2"/>
+  </file>
+  <file path="/workspace/tests/frontend/lib/getHello.test.ts">
+    <testCase name="testing api/test/hello is John Doe" duration="2"/>
+  </file>
+</testExecutions>

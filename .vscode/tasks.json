@@ -10,6 +10,20 @@
 			"group": "test",
 			"problemMatcher": [],
 			"options": {
+				"cwd": "${workspaceFolder}/frontend/"
+			},
+			"label": "yarn: run tests frontend",
+			"detail": "jest in ./frontend/"
+		},
+		{
+			"type": "shell",
+			"command": [
+				"yarn",
+				"test"
+			],
+			"group": "test",
+			"problemMatcher": [],
+			"options": {
 				"cwd": "${workspaceFolder}/tests/"
 			},
 			"label": "yarn: run tests",

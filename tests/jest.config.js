@@ -8,7 +8,13 @@ module.exports = {
   "transformIgnorePatterns": [
     "node_modules/(?!frontend/.*)"
   ],
-  "coverageReporters": ["lcov", ["text", {"skipFull": true}]]
+  "collectCoverage": true,
+  "coverageReporters": ["lcov", ["text", { "skipFull": true }]],
+  "testResultsProcessor": "jest-sonar-reporter",
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/test/"
+  ]
   // verbose: true,
   // automock: true,
 };

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    // settings from nextjs template
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -13,8 +14,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+
+    // extra from https://github.com/Swizec/jest-db-mock-example/blob/main/tsconfig.json
+    // "target": "es2017",
+    "types": ["node", "jest"],
+    "allowSyntheticDefaultImports": true,
+    // "module": "commonjs",
+    "baseUrl": ".",
+    "noFallthroughCasesInSwitch": true,
+    "outDir": "./dist"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tsconfig.test.json"],
+  "compileOnSave": true,
+  "include": ["."],
   "exclude": ["node_modules"]
 }
