@@ -1,5 +1,0 @@
-.dockerignore
-devcontainer.json
-README.md
-node_modules/
-.next/
