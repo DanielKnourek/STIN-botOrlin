@@ -2,12 +2,11 @@ version: "3.9"
 services:
   frontend:
     build:
-      context: ..
-      dockerfile: frontend/Dockerfile
+      context: ../frontend
+      dockerfile: Dockerfile
 
     volumes:
       - ..:/workspace
-    
       # Overrides default command so things don't shut down after the process ends.
       # command: sleep infinity
 
