@@ -7,17 +7,18 @@ services:
 
     volumes:
       - ..:/workspace
-    
-      # Overrides default command so things don't shut down after the process ends.
-      # command: sleep infinity
+    # Overrides default command so things don't shut down after the process ends.
+    # command: sleep infinity
+    command: /bin/sh -c "while sleep 1000; do :; done"
 
-      # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-      # networks: ['stack']
 
-      # Uncomment the next line to use a non-root user for all processes.
-      # user: node ##UNCOMMENT##
+    # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
+    # networks: ['stack']
 
-      # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
-      # (Adding the "ports" property to this file will not forward from a Codespace.)
-      # ports:
-      # - 3000:3000
+    # Uncomment the next line to use a non-root user for all processes.
+    # user: node ##UNCOMMENT##
+
+    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
+    # (Adding the "ports" property to this file will not forward from a Codespace.)
+    # ports:
+    # - 3000:3000
