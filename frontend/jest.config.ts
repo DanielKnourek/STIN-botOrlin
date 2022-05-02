@@ -29,7 +29,9 @@ const config: Config.InitialOptions = {
     '<rootDir>/tests/',
   ],
   coverageDirectory: "tests/coverage",
+  testResultsProcessor: 'jest-sonar-reporter',
   coverageReporters: ["lcov", ["text", { "skipFull": true }]],
+
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',
     '/^.+.(css|less|scss|sass)$/': 'jest-css-modules-transform',
@@ -46,4 +48,4 @@ const config: Config.InitialOptions = {
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
-module.exports = createJestConfig(config);
+export default createJestConfig(config);
