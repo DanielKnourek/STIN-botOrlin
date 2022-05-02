@@ -22,12 +22,21 @@ const config: Config.InitialOptions = {
     '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',
     '/^.+.(css|less|scss|sass)$/': 'jest-css-modules-transform',
   },
+  transformIgnorePatterns: [
+    'node_modules/(?!frontend)',
+  ],
   collectCoverage: true,
-  // collectCoverageFrom: [
-  //   "./frontend/lib/**/*.{js,jsx,ts,tsx}",
-  //   "../**/*.{js,jsx,ts,tsx}",
-  //   // "lib/**/*.{js,jsx,ts,tsx}",
-  // ],
+  collectCoverageFrom: [
+    "frontend/lib/**/*.{js,jsx,ts,tsx}",
+    "**/*.{js,jsx,ts,tsx}",
+    // "lib/**/*.{js,jsx,ts,tsx}",
+  ],
+  coveragePathIgnorePatterns: [
+    'node_modules/(?!frontend)',
+  ],
+  forceCoverageMatch: [
+    "frontend/lib/**/*.{js,jsx,ts,tsx}",
+  ],
   coverageReporters: ["lcov", ["text", { "skipFull": true }]],
   coverageDirectory: "coverage",
   coverageThreshold: {
@@ -37,10 +46,6 @@ const config: Config.InitialOptions = {
   },
 
   testEnvironment: "node",
-
-  transformIgnorePatterns: [
-    'node_modules/(?!frontend)',
-  ],
 
   // // setupFilesAfterEnv: ["jest-extended/all"],
   // // testPathIgnorePatterns: [

@@ -1,4 +1,4 @@
-import getHello, { Data } from './getHello';
+import getHello, { Data } from 'frontend/lib/getHello';
 
 describe('testing api/test/hello', () => {
 
