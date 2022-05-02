@@ -2,8 +2,8 @@ version: "3.9"
 services:
   frontend:
     build:
-      context: ..
-      dockerfile: frontend/Dockerfile
+      context: ../frontend
+      dockerfile: ./Dockerfile
 
     volumes:
       - ..:/workspace
