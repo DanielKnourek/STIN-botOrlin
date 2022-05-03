@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  linting:
     runs-on: ubuntu-latest
     defaults:
       run:
