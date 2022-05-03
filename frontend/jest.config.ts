@@ -29,7 +29,6 @@ const config: Config.InitialOptions = {
     '<rootDir>/tests/',
   ],
   coverageDirectory: "tests/coverage",
-  testResultsProcessor: 'jest-sonar-reporter',
   coverageReporters: ["lcov", ["text", { "skipFull": true }]],
 
   transform: {
