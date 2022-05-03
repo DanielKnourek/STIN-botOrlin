@@ -25,5 +25,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16.x'
-      - run: yarn install
-      - run: yarn lint
+
+      - name: Install dependencies
+        run: yarn install
+        
+      - name: Run linter
+        run: yarn lint
