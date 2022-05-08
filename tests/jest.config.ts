@@ -2,45 +2,70 @@ import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
   preset: "ts-jest",
-  roots: [
-    "frontend",
-    "node_modules/frontend/lib"
-  ],
   globals: {
     'ts-jest': {
       isolatedModules: true,
     }
   },
-  setupFilesAfterEnv: ["jest-extended/all"],
-  // testPathIgnorePatterns: [
-  //   "<rootDir>/**/node_modules/"
-  // ],
-  // testPathIgnorePatterns: ["<rootDir>/tests/fixtures/"],
-  // testEnvironment: 'node',
-  collectCoverage: true,
-  collectCoverageFrom: [
-    "../frontend/**/*.{js,jsx,ts,tsx}",
-    "frontend/**/*.{js,jsx,ts,tsx}",
-    "lib/**/*.{js,jsx,ts,tsx}",
+  rootDir: ".",
+  roots: [
+    "frontend",
+    "node_modules/frontend/lib",
+    "../frontend/lib",
   ],
-  coverageReporters: ["lcov", ["text", { "skipFull": true }]],
-  testResultsProcessor: "jest-sonar-reporter",
-  // "coveragePathIgnorePatterns": [
-  //   "/node_modules/",
-  //   "/test/"
-  // ],
-  moduleFileExtensions: ['ts', 'tsx', 'js'],
+  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/(?!frontend)'],
+  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   moduleNameMapper: {
-    '^(.*)\\.js$': '$1',
+    '\\.(css|less|scss|sass)$': 'jest-css-modules-transform',
   },
-  testEnvironment: 'jest-environment-node',
   transform: {
-    "^.+\\.(ts|tsx|js|jsx)$": "ts-jest",
+    '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',
+    '/^.+.(css|less|scss|sass)$/': 'jest-css-modules-transform',
   },
+  collectCoverage: true,
+  // collectCoverageFrom: [
+  //   "./frontend/lib/**/*.{js,jsx,ts,tsx}",
+  //   "../**/*.{js,jsx,ts,tsx}",
+  //   // "lib/**/*.{js,jsx,ts,tsx}",
+  // ],
+  coverageReporters: ["lcov", ["text", { "skipFull": true }]],
+  coverageDirectory: "coverage",
+  coverageThreshold: {
+    global: {
+      lines: 85,
+    },
+  },
+
+  testEnvironment: "node",
+
   transformIgnorePatterns: [
-    'node_modules/(?!aggregate-error|clean-stack|escape-string-regexp|indent-string|p-map)',
-    '/.next',
+    'node_modules/(?!frontend)',
   ],
+
+  // // setupFilesAfterEnv: ["jest-extended/all"],
+  // // testPathIgnorePatterns: [
+  // //   "<rootDir>/**/node_modules/"
+  // // ],
+  // // testPathIgnorePatterns: ["<rootDir>/tests/fixtures/"],
+  // // testEnvironment: 'node',
+
+  // testResultsProcessor: "jest-sonar-reporter",
+  // // "coveragePathIgnorePatterns": [
+  // //   "/node_modules/",
+  // //   "/test/"
+  // // ],
+  // moduleFileExtensions: ['ts', 'tsx', 'js'],
+  // moduleNameMapper: {
+  //   '^(.*)\\.js$': '$1',
+  // },
+  // testEnvironment: 'jest-environment-node',
+  // transform: {
+  //   "^.+\\.(ts|tsx|js|jsx)$": "ts-jest",
+  // },
+  // transformIgnorePatterns: [
+  //   'node_modules/(?!aggregate-error|clean-stack|escape-string-regexp|indent-string|p-map)',
+  //   '/.next',
+  // ],
   // automock: true,
   verbose: true,
 };
