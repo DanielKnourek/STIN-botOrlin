@@ -1,0 +1,4 @@
+.dockerignore
+*.md
+node_modules/
+.next/

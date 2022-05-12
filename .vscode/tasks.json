@@ -10,7 +10,7 @@
 			"group": "test",
 			"problemMatcher": [],
 			"options": {
-				"cwd": "${workspaceFolder}/tests/"
+				"cwd": "${workspaceFolder}/frontend/"
 			},
 			"label": "yarn: run tests",
 			"detail": "jest"
@@ -24,7 +24,7 @@
 			"group": "test",
 			"problemMatcher": [],
 			"options": {
-				"cwd": "${workspaceFolder}/tests/"
+				"cwd": "${workspaceFolder}/frontend/"
 			},
 			"presentation": {
 				"echo": true,
@@ -41,7 +41,7 @@
 			"group": "test",
 			"problemMatcher": [],
 			"options": {
-				"cwd": "${workspaceFolder}/tests/"
+				"cwd": "${workspaceFolder}/frontend/"
 			},
 			"dependsOrder": "sequence",
 			"dependsOn": [
